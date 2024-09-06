@@ -65,12 +65,12 @@ export default function ModalForm() {
 
       const variable = {
         question: flashcards[0].front,
-        answer: flashcards.map(card => card.back)
+        answers: flashcards.map(card => card.back)
       }
       console.log(variable);
       const {data} = await addCard({variables:variable})
       console.log(data)
-
+      
       //console.log(variable)
       // Close the modal after saving
       onClose();

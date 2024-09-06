@@ -78,10 +78,10 @@ const resolvers = {
         { new: true }
       );
     },
-    addCard: async (parent, { question, answer }) => {
+    addCard: async (parent, { question, answers }) => {
       const card = await Card.create({
         question,
-        answer,
+        answers,
       });
 
       return card;
@@ -93,10 +93,10 @@ const resolvers = {
 
       return card;
     },
-    updateCard: async (parent, { cardId, question, answer }) => {
+    updateCard: async (parent, { cardId, question, answers }) => {
       const updateFields = {};
       if (question) updateFields.question = question;
-      if (answer) updateFields.answer = answer;
+      if (answers) updateFields.answers = answers;
 
       return Card.findOneAndUpdate(
         { _id: cardId },

@@ -15,7 +15,7 @@ const typeDefs = `
   type Card {
     _id: ID
     question: String!
-    answer: [String]!
+    answers: [String]!
   }
 
   type Auth {
@@ -39,7 +39,7 @@ const typeDefs = `
     addDeck(deckName: String!, cardIds: [ID]!): Deck
     updateDeck(_id: ID!, deckName: String, cardIds: [ID]): Deck
     removeDeck(_id: ID!): Deck
-    addCard(_id: ID, question: String!, answer: [String]!): Card
+    addCard(_id: ID, question: String!, answers: [String]!): Card
     updateCard(_id: ID!, question: String, answers: [String]): Card
     removeCard(_id: ID!): Card
   }
