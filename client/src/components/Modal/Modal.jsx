@@ -65,7 +65,7 @@ export default function ModalForm() {
 
       const variable = {
         question: flashcards[0].front,
-        answers: flashcards.map(card => card.back)
+        answer: flashcards.map(card => card.back)
       }
       console.log(variable);
       const {data} = await addCard({variables:variable})
