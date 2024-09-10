@@ -43,6 +43,34 @@ export const REMOVE_CARD = gql`
   }
 `;
 
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($cardId: ID!, $commentId: ID!) {
+    removeComment(cardId: $cardId, commentId: $commentId) {
+      _id
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
+export const UPDATE_COMMENT = gql`
+  mutation updateComment($cardId: ID!, $commentId: ID!, $commentText: String!) {
+    updateComment(
+      cardId: $cardId
+      commentId: $commentId
+      commentText: $commentText
+    ) {
+      _id
+      comments {
+        _id
+        commentText
+      }
+    }
+  }
+`;
+
 export const UPDATE_CARD = gql`
   mutation updateCard($_id: ID!, $question: String, $answers: [String]) {
     updateCard(_id: $_id, question: $question, answers: $answers) {
@@ -54,9 +82,12 @@ export const UPDATE_CARD = gql`
 `;
 
 export const ADD_DECK = gql`
-mutation addDeck($deckName: String!) {
-  addDeck {
-    deckName
+  mutation addDeck($deckName: String, $cardID: [ID!], $userID: ID!) {
+    addDeck(deckName: $deckName, cardID: $cardID, userID: $userID) {
+      _id
+      deckName
+      cardID
+      userID
+    }
   }
-}
 `;
