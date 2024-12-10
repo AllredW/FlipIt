@@ -118,7 +118,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Deployment
 
-In development...
-
+https://flipit-h6ss.onrender.com/
 <!-- Deployed link goes here -->
 <!-- To see website, follow this [Link]() -->
